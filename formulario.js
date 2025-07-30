@@ -1,6 +1,6 @@
-const EMAIL_SERVICE_ID = 'service_tnijiby';
-        const EMAIL_TEMPLATE_ID = 'template_wubmj1w';
-        const EMAIL_PUBLIC_KEY = 'eHIm8H2B6920R4krq';
+const EMAIL_SERVICE_ID = 'service_sx9a1oi';
+        const EMAIL_TEMPLATE_ID = 'template_nphq52q';
+        const EMAIL_PUBLIC_KEY = 'Kr6qWx-9R57F8pQYq';
 
         // Initialize EmailJS
         emailjs.init(EMAIL_PUBLIC_KEY);
