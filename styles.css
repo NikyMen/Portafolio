@@ -160,6 +160,7 @@ body {
     color: var(--color-text);
     background-color: var(--color-background);
     overflow-x: hidden;
+    padding-top: 92px; /* Ajustado para compensar el encabezado fijo */
 }
 
 img {
@@ -857,6 +858,13 @@ a {
 .skill-item i {
     height: 30px;
     font-size: var(--font-size-3xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.skill-icon {
+    height: 30px;
+    width: 30px;
     color: var(--color-primary);
     margin-bottom: var(--spacing-sm);
 }

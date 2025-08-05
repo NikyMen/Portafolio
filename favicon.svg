@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      text { fill: #1ff0ff; }
+    }
+    @media (prefers-color-scheme: light) {
+      text { fill: #2563eb; }
+    }
+  </style>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Space Grotesk" font-weight="700" font-size="45">NM</text>
+</svg>
