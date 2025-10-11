@@ -2,10 +2,10 @@
   "name": "Portafolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "node --watch index.js",
-    "start": "node index.js",
+    "dev": "npx --yes http-server -p 8080 -c-1",
+    "start": "npx --yes http-server -p 8080 -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
