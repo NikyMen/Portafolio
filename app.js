@@ -1,5 +1,5 @@
 // Selección de elementos del DO
-
+import { Analytics } from "@vercel/analytics/next"
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggles = document.querySelectorAll('.theme-toggle, .theme-toggle-bug');
     const root = document.documentElement;
