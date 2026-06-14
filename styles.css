@@ -53,19 +53,19 @@
 }
 
 [data-theme="dark"] {
-    --color-primary: #1ff0ff;
-    --color-primary-dark: #18dcff;
-    --color-secondary: #383501;
-    --color-accent: #00259d;
-    --color-background: #0f172a;
-    --color-surface: radial-gradient(circle at 80% 30%, #013560, #042952, #09132e, #09122b, #060608, #000000); 
-    --color-text: #f8fafc;
-    --color-text-light: #cbd5e1;
-    --color-border: #334155;
+    --color-primary: #a3ff12;
+    --color-primary-dark: #7ccc00;
+    --color-secondary: #d4ff33;
+    --color-accent: #5fd400;
+    --color-background: #000000;
+    --color-surface: radial-gradient(circle at 80% 30%, #1b3300, #142600, #0c1700, #070d00, #030500, #000000);
+    --color-text: #f2ffe8;
+    --color-text-light: #aed98a;
+    --color-border: #2d3d1a;
     --color-success: #42ad00;
     --color-error: #ae0202;
-    --color-tono:#0a0a0a;
-    --color-menu:rgba(26, 25, 25, 0.871);
+    --color-tono:#080d03;
+    --color-menu:rgba(6, 12, 0, 0.9);
 }
 
 /* Reset and Base Styles */
@@ -115,9 +115,9 @@
 .dark-background-grid {
     position: absolute;
     inset: 0;
-    background-image: 
-        linear-gradient(to right, #4f4f4f2e 1px, transparent 1px),
-        linear-gradient(to bottom, #8080800a 1px, transparent 1px);
+    background-image:
+        linear-gradient(to right, #a3ff1218 1px, transparent 1px),
+        linear-gradient(to bottom, #a3ff120d 1px, transparent 1px);
     background-size: 14px 24px;
 }
 
@@ -130,7 +130,7 @@
     width: 1000px;
     margin: 0 auto;
     border-radius: 50%;
-    background: radial-gradient(circle 400px at 50% 300px, #fbfbfb36, #000);
+    background: radial-gradient(circle 400px at 50% 300px, #a3ff1233, #000);
 }
 
 /* Mostrar el fondo correspondiente según el tema */

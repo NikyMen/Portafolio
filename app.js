@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Establecer el tema inicial
     function initializeTheme() {
         const savedTheme = localStorage.getItem('theme');
-        const theme = savedTheme || (prefersDarkScheme.matches ? 'dark' : 'light');
+        const theme = savedTheme || 'dark';
         setTheme(theme);
     }
 
