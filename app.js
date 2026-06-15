@@ -3,23 +3,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggles = document.querySelectorAll('.theme-toggle, .theme-toggle-bug');
     const root = document.documentElement;
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     if (themeToggles.length === 0) {
         console.error('No theme toggle buttons found.');
         return;
     }
 
+    // Temas disponibles en orden de ciclo
+    const THEMES = ['light', 'dark', 'blue'];
+
     // Función para actualizar los estados visuales de todos los botones
     function syncThemeIcons(theme) {
         themeToggles.forEach(toggle => {
-            if (theme === 'dark') {
-                toggle.classList.add('dark');
-                toggle.classList.remove('light');
-            } else {
-                toggle.classList.add('light');
-                toggle.classList.remove('dark');
-            }
+            // Marca la clase del tema activo en el contenedor
+            THEMES.forEach(t => toggle.classList.toggle(t, t === theme));
+            // Resalta el icono correspondiente al tema activo
+            toggle.querySelectorAll('.theme-icon').forEach(icon => {
+                icon.classList.toggle('active', icon.dataset.themeValue === theme);
+            });
         });
     }
 
@@ -30,23 +31,40 @@ document.addEventListener('DOMContentLoaded', () => {
         syncThemeIcons(theme);
     }
 
-    // Función para alternar el tema
-    function toggleTheme() {
-        const currentTheme = root.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
+    // Avanza al siguiente tema del ciclo (light → dark → blue → light)
+    function cycleTheme() {
+        const currentIndex = THEMES.indexOf(root.getAttribute('data-theme'));
+        const nextTheme = THEMES[(currentIndex + 1) % THEMES.length];
+        setTheme(nextTheme);
     }
 
     // Establecer el tema inicial
     function initializeTheme() {
         const savedTheme = localStorage.getItem('theme');
-        const theme = savedTheme || 'dark';
+        const theme = THEMES.includes(savedTheme) ? savedTheme : 'dark';
         setTheme(theme);
     }
 
     // Agregar event listeners a todos los toggles
     themeToggles.forEach(toggle => {
-        toggle.addEventListener('click', toggleTheme);
+        toggle.addEventListener('click', (e) => {
+            // Si se hace clic en un icono concreto, aplica ese tema directamente;
+            // en cualquier otro punto del toggle, avanza al siguiente tema.
+            const icon = e.target.closest('.theme-icon');
+            if (icon && icon.dataset.themeValue) {
+                setTheme(icon.dataset.themeValue);
+            } else {
+                cycleTheme();
+            }
+        });
+
+        // Soporte de teclado (Enter / Espacio)
+        toggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                cycleTheme();
+            }
+        });
     });
 
     // Inicializar el tema al cargar la página
@@ -89,7 +107,7 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
 
 // Efecto de escritura para el typewriter
 const typewriterElement = document.querySelector('.typed-text');
-const phrases = ['Desarrollador Frontend','Desarrolador web' ];
+const phrases = ['Desarrollador Potenciado con IA','Automatización & IA','Desarrollador Full Stack'];
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -235,6 +253,77 @@ const initScrollProgress = () => {
 document.addEventListener('DOMContentLoaded', () => {
     initScrollProgress();
 });
+
+
+// ===== Integración Parallax =====
+// Dos capas de efecto: desplazamiento por scroll (fondos) y profundidad por
+// movimiento del mouse (visual del hero). Se respeta prefers-reduced-motion.
+const initParallax = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReducedMotion.matches) return;
+
+    // --- Parallax por scroll ---
+    const scrollLayers = document.querySelectorAll('[data-parallax]');
+    let latestScrollY = window.scrollY;
+    let scrollTicking = false;
+
+    const applyScrollParallax = () => {
+        scrollLayers.forEach(layer => {
+            const speed = parseFloat(layer.dataset.parallax) || 0;
+            const offset = latestScrollY * speed;
+            layer.style.transform = `translate3d(0, ${offset}px, 0)`;
+        });
+        scrollTicking = false;
+    };
+
+    if (scrollLayers.length) {
+        window.addEventListener('scroll', () => {
+            latestScrollY = window.scrollY;
+            if (!scrollTicking) {
+                window.requestAnimationFrame(applyScrollParallax);
+                scrollTicking = true;
+            }
+        }, { passive: true });
+        applyScrollParallax();
+    }
+
+    // --- Parallax por movimiento del mouse (dentro del hero) ---
+    const hero = document.querySelector('.hero');
+    const mouseLayers = document.querySelectorAll('[data-parallax-mouse]');
+    let mouseTicking = false;
+    let mouseX = 0;
+    let mouseY = 0;
+
+    const applyMouseParallax = () => {
+        mouseLayers.forEach(layer => {
+            const depth = parseFloat(layer.dataset.parallaxMouse) || 0;
+            layer.style.transform = `translate3d(${mouseX * depth}px, ${mouseY * depth}px, 0)`;
+        });
+        mouseTicking = false;
+    };
+
+    if (hero && mouseLayers.length) {
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            // Posición del cursor relativa al centro del hero, normalizada (-1 a 1)
+            mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+            mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+            if (!mouseTicking) {
+                window.requestAnimationFrame(applyMouseParallax);
+                mouseTicking = true;
+            }
+        });
+
+        // Al salir del hero, las capas vuelven a su posición original
+        hero.addEventListener('mouseleave', () => {
+            mouseX = 0;
+            mouseY = 0;
+            window.requestAnimationFrame(applyMouseParallax);
+        });
+    }
+};
+
+document.addEventListener('DOMContentLoaded', initParallax);
 
 
 

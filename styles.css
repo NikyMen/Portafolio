@@ -68,6 +68,22 @@
     --color-menu:rgba(6, 12, 0, 0.9);
 }
 
+[data-theme="blue"] {
+    --color-primary: #3b82f6;
+    --color-primary-dark: #2563eb;
+    --color-secondary: #60a5fa;
+    --color-accent: #38bdf8;
+    --color-background: #03060f;
+    --color-surface: radial-gradient(circle at 30% 20%, #0d1b3a, #0a1730, #081226, #050d1c, #030813, #03060f);
+    --color-text: #eaf2ff;
+    --color-text-light: #93b4e6;
+    --color-border: #16294d;
+    --color-success: #22d3ee;
+    --color-error: #f43f5e;
+    --color-tono: #060c1ae1;
+    --color-menu: rgba(5, 11, 26, 0.7);
+}
+
 /* Reset and Base Styles */
 *, *::before, *::after {
     text-wrap: balance;
@@ -133,6 +149,67 @@
     background: radial-gradient(circle 400px at 50% 300px, #a3ff1233, #000);
 }
 
+/* Fondo para tema azul difuminado */
+.blue-background {
+    display: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #03060f;
+}
+
+.blue-background-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, #3b82f618 1px, transparent 1px),
+        linear-gradient(to bottom, #3b82f60d 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+/* Manchas de luz difuminadas (efecto blur) */
+.blue-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.5;
+    will-change: transform, opacity;
+    animation: blobPulse 8s ease-in-out infinite;
+}
+
+.blue-blob-1 {
+    top: -10%;
+    left: 5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #2563eb, transparent 70%);
+}
+
+.blue-blob-2 {
+    top: 25%;
+    right: -10%;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, #38bdf8, transparent 70%);
+    animation-delay: 2.5s;
+}
+
+.blue-blob-3 {
+    bottom: -15%;
+    left: 30%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, #1e3a8a, transparent 70%);
+    animation-delay: 4.5s;
+}
+
+@keyframes blobPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.65; }
+}
+
 /* Mostrar el fondo correspondiente según el tema */
 [data-theme="light"] .light-background {
     display: block;
@@ -142,9 +219,14 @@
     display: block;
 }
 
+[data-theme="blue"] .blue-background {
+    display: block;
+}
+
 /* Transiciones suaves */
 .light-background,
-.dark-background {
+.dark-background,
+.blue-background {
     transition: opacity 0.3s ease;
 }
 
@@ -338,11 +420,24 @@ a {
     
 }
 
-.theme-icon { 
-    
+.theme-icon {
     padding: var(--spacing-xs);
     border-radius: var(--radius-full);
     transition: var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+    transform: scale(0.9);
+}
+
+.theme-icon:hover {
+    opacity: 0.75;
+}
+
+.theme-icon.active {
+    opacity: 1;
+    transform: scale(1.12);
 }
 
 .fa-moon{
@@ -351,6 +446,10 @@ a {
 
 .fa-sun{
     color: var(--color-secondary);
+}
+
+.fa-cloud-moon{
+    color: var(--color-accent);
 }
 
 /* Hero Section */
@@ -1008,6 +1107,36 @@ a {
     object-fit: contain;
 }
 
+.project-image.placeholder {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+.project-image.placeholder .placeholder-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    color: var(--color-tono);
+    text-align: center;
+    padding: 0 var(--spacing-md);
+}
+
+.project-image.placeholder .placeholder-inner i {
+    font-size: 3.25rem;
+}
+
+.project-image.placeholder .placeholder-inner span {
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    letter-spacing: 0.5px;
+}
+
 .project-overlay {
     position: absolute;
     top: 0;
@@ -1082,6 +1211,33 @@ a {
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
     color: var(--color-primary);
+}
+
+/* Featured (gold) project card */
+.project-card-gold {
+    position: relative;
+    border: 2px solid #d4af37;
+    box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.35);
+}
+
+.project-card-gold:hover {
+    box-shadow: 0 18px 30px -8px rgba(212, 175, 55, 0.5);
+}
+
+.project-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 2;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+    color: #4a3a00;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
 }
 
 /* Contact Section */
@@ -1471,8 +1627,6 @@ footer .logo-text {
     }
     .project-card-gold{
         height: min-content;
-        background-color: #d4af37;
-        padding: 1rem;
     }
     .glitch-text{
         font-size: var(--font-size-4xl);

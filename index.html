@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas Mendez | Desarrollador web y software</title>
+    <title>Nicolas Mendez | Desarrollador Full Stack potenciado con IA</title>
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <!-- Facebook Meta Tags -->
 <meta property="og:url" content="https://nicolasmendez.vercel.app/"> <!-- ACTUALIZA ESTE URL -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nicolas Mendez | Desarrollador web y software">
-<meta property="og:description" content="Portafolio de Nicolas Mendez - Desarrollador web y software">
+<meta property="og:title" content="Nicolas Mendez | Desarrollador Full Stack potenciado con IA">
+<meta property="og:description" content="Portafolio de Nicolas Mendez - Desarrollador Full Stack especializado en IA y automatización">
 <meta property="og:image" content="https://nicolasmendez.vercel.app/"> <!-- ACTUALIZA ESTE URL -->
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="https://nicolasmendez.vercel.app/"> <!-- ACTUALIZA ESTE DOMINIO -->
 <meta property="twitter:url" content="https://nicolasmendez.vercel.app/"> <!-- ACTUALIZA ESTE URL -->
-<meta name="twitter:title" content="Nicolas Mendez | Desarrollador web y software">
-<meta name="twitter:description" content="Portafolio de Nicolas Mendez - Desarrollador web y software">
+<meta name="twitter:title" content="Nicolas Mendez | Desarrollador Full Stack potenciado con IA">
+<meta name="twitter:description" content="Portafolio de Nicolas Mendez - Desarrollador Full Stack especializado en IA y automatización">
 <meta name="twitter:image" content="https://nicolasmendez.vercel.app/"> <!-- ACTUALIZA ESTE URL -->
 
     <link rel="stylesheet" href="styles.css">
@@ -46,7 +46,15 @@
         <!-- Fondo tema oscuro -->
         <div class="dark-background">
             <div class="dark-background-grid"></div>
-            <div class="dark-background-gradient"></div>
+            <div class="dark-background-gradient" data-parallax="0.3"></div>
+        </div>
+
+        <!-- Fondo tema azul difuminado -->
+        <div class="blue-background">
+            <div class="blue-background-grid"></div>
+            <div class="blue-blob blue-blob-1" data-parallax="0.25"></div>
+            <div class="blue-blob blue-blob-2" data-parallax="-0.18"></div>
+            <div class="blue-blob blue-blob-3" data-parallax="0.12"></div>
         </div>
     </div>
 
@@ -69,9 +77,10 @@
                     <li role="none"><a href="#contact" role="menuitem" class="nav-link">Contacto</a></li>
                 </ul>
 
-                <div class="theme-toggle" role="switch" aria-label="Alternar modo oscuro" tabindex="0">
-                    <span class="theme-icon light"><i class="fas fa-sun"></i></span>
-                    <span class="theme-icon dark"><i class="fas fa-moon"></i></span>
+                <div class="theme-toggle" role="switch" aria-label="Cambiar tema" tabindex="0">
+                    <span class="theme-icon light" data-theme-value="light"><i class="fas fa-sun"></i></span>
+                    <span class="theme-icon dark" data-theme-value="dark"><i class="fas fa-moon"></i></span>
+                    <span class="theme-icon blue" data-theme-value="blue"><i class="fas fa-cloud-moon"></i></span>
                 </div>
             </div>
         </div>
@@ -80,7 +89,7 @@
     <main id="main">
         <div id="scroll-progress-container">
             <div id="scroll-progress"></div>
-            <div id="scroll-progress-text"> JAVASCRIPT * HTML5 * CSS3 * TYPESCRIPT * REACT * ASTRO * PHP *
+            <div id="scroll-progress-text"> IA * AUTOMATIZACIÓN * N8N * PYTHON * JAVASCRIPT * TYPESCRIPT * REACT * NEXT.JS * ASTRO * NODE.JS *
         </div>
         </div>
         <section id="home" class="hero" aria-label="Introducción">
@@ -97,7 +106,7 @@
                             <span class="cursor"></span>
                         </div>
                         <p class="hero-description">
-                            Como desarrollador fullstack en crecimiento, estoy entusiasmado por crear experiencias digitales atractivas y funcionales. Con una sólida base en las últimas tecnologías y un enfoque práctico, transformo ideas en soluciones web intuitivas. Aunque estoy al inicio de mi carrera, mi compromiso y creatividad me impulsan a entregar proyectos de calidad. ¡Listo para colaborar y aprender en cada desafío!
+                            Soy un desarrollador Full Stack potenciado con IA. Construyo aplicaciones web modernas y, sobre todo, automatizo procesos reales: bots de WhatsApp, agentes de IA con n8n y GPT, servidores MCP y flujos que ahorran horas de trabajo. Combino código, inteligencia artificial y automatización para transformar ideas en soluciones que realmente generan valor. ¡Listo para llevar tu proyecto al siguiente nivel!
                         </p>
                         <div class="cta-group">
                             <a href="#contact" class="btn btn-primary">Hablemos</a>
@@ -107,13 +116,16 @@
                     <div class="hero-visual">
                         <div class="profile-wrapper">
                             <div class="profile-card">
-                                <div class="profile-effects">
+                                <div class="profile-effects" data-parallax-mouse="18">
                                     <div class="effect-circle"></div>
                                     <div class="effect-grid"></div>
                                 </div>
                                 <img src="img/fotitopa.jpeg" alt="Foto de perfil de Nicolas Mendez"
                                     class="profile-image">
-                                <div class="tech-stack">
+                                <div class="tech-stack" data-parallax-mouse="-14">
+                                    <div class="tech-item" data-tooltip="IA & Automatización">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
                                     <div class="tech-item" data-tooltip="HTML5">
                                         <i class="fab fa-html5"></i>
                                     </div>
@@ -149,18 +161,20 @@
                 </div>
                 <div class="about-content">
                     <div class="about-text">
-                        <p class="about-lead">Combino diseño centrado en el usuario con programación para identificar
-                            problemas y ofrecer soluciones digitales estéticamente atractivas y funcionales.</p>
-                        <p class="about-description">Soy desarrollador fullstack con 1 año de
-                            experiencia, especializado en crear soluciones digitales centradas en el usuario. Mi enfoque
-                            combina estética, precisión, atención al detalle y funcionalidad, garantizando experiencias
-                            intuitivas y efectivas.</p>
+                        <p class="about-lead">Combino desarrollo Full Stack, inteligencia artificial y automatización
+                            para identificar problemas y entregar soluciones digitales que ahorran tiempo y generan
+                            valor real.</p>
+                        <p class="about-description">Soy desarrollador Full Stack potenciado con IA, con 2 años de
+                            experiencia creando aplicaciones web y automatizando procesos. Trabajo con agentes de IA,
+                            flujos en n8n, integraciones con GPT, servidores MCP y bots de WhatsApp, además de stacks
+                            modernos como React, Next.js, Astro y Node.js. Mi enfoque combina estética, precisión y
+                            funcionalidad para construir productos intuitivos y eficientes.</p>
                         <div class="stats-grid">
-                            <div class="stat-card" data-value="1">
+                            <div class="stat-card" data-value="2">
                                 <div class="stat-number">0</div>
-                                <div class="stat-label">Año de Experiencia</div>
+                                <div class="stat-label">Años de Experiencia</div>
                             </div>
-                            <div class="stat-card" data-value="6">
+                            <div class="stat-card" data-value="15">
                                 <div class="stat-number">0</div>
                                 <div class="stat-label">Proyectos Completados</div>
                             </div>
@@ -171,15 +185,15 @@
                         <div class="expertise-card">
                             <div class="expertise-logo">
                                 <div class="expertise-icon">
-                                    <i class="fas fa-paint-brush"></i>
+                                    <i class="fas fa-robot"></i>
                                 </div>
-                                <h3>Frontend Development</h3>
+                                <h3>IA & Automatización</h3>
                             </div>
-                            <p>Construyo interfaces modernas con React, TypeScript y CSS avanzado, enfocándome en performance y accesibilidad.</p>
+                            <p>Construyo agentes y flujos inteligentes que automatizan procesos reales, integrando modelos de IA con tus herramientas.</p>
                             <ul class="expertise-list">
-                                <li>Componentes reutilizables con hooks personalizados</li>
-                                <li>Optimización de Core Web Vitals (LCP, FID, CLS)</li>
-                                <li>Diseño responsive mobile-first</li>
+                                <li>Agentes de IA y flujos con n8n + GPT</li>
+                                <li>Servidores MCP (Model Context Protocol) en Python</li>
+                                <li>Bots de WhatsApp y atención automatizada</li>
                             </ul>
                         </div>
                         <div class="expertise-card">
@@ -201,13 +215,13 @@
                                 <div class="expertise-icon">
                                     <i class="fas fa-code"></i>
                                 </div>
-                                <h3>Testing y Calidad</h3>
+                                <h3>Desarrollo Full Stack</h3>
                             </div>
-                            <p>Garantizo calidad con pruebas automatizadas y herramientas modernas.</p>
+                            <p>Construyo aplicaciones completas con interfaces modernas y backends sólidos, enfocándome en performance y experiencia de usuario.</p>
                             <ul class="expertise-list">
-                                <li>Jest + React Testing Library</li>
-                                <li>ESLint/Prettier</li>
-                                <li>Lighthouse CI</li>
+                                <li>React, Next.js y Astro en el frontend</li>
+                                <li>Node.js, Express y APIs REST en el backend</li>
+                                <li>Diseño responsive mobile-first</li>
                             </ul>
                         </div>
                     </div>
@@ -225,6 +239,26 @@
                 </div>
                 <div class="skills-content">
                     <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fas fa-robot"></i>
+                            <span>IA / GPT</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-gears"></i>
+                            <span>n8n / Automatización</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-layer-group"></i>
+                            <span>Next.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Firebase</span>
+                        </div>
                         <div class="skill-item">
                             <i class="fab fa-html5"></i>
                             <span>HTML5</span>
@@ -452,9 +486,10 @@
                         </div>
                     </article>
 
-                    <article class="project-card-gold">
+                    <article class="project-card project-card-gold">
+                        <span class="project-badge">Destacado</span>
                         <div class="project-image">
-                            <img src="images/creandolazos.png" alt="Creando Lazos App - Gestión de citas y horarios" loading="lazy">
+                            <img src="images/creandolazos.svg" alt="Creando Lazos App - Gestión de citas y horarios" loading="lazy">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="https://creandolazos.vercel.app/" target="_blank" class="project-link"
@@ -476,6 +511,245 @@
                                 <span>Node.js</span>
                                 <span>TypeScript</span>
                                 <span>Express</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image placeholder">
+                            <div class="placeholder-inner">
+                                <i class="fas fa-robot"></i>
+                                <span>MCP Consultoría Digital</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/NikyMen/MCP-ConsultoriaDigital" target="_blank" class="project-link"
+                                        aria-label="Ver código en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>MCP Consultoría Digital</h3>
+                            <p>Servidor MCP (Model Context Protocol) en Python que potencia un asistente comercial de WhatsApp con IA. Orquestado con n8n + GPT, expone el catálogo de productos, valida CUIT y automatiza el envío de presupuestos. Desplegado en VPS con systemd y Nginx.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>MCP</span>
+                                <span>n8n</span>
+                                <span>OpenAI GPT</span>
+                                <span>WhatsApp</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image placeholder">
+                            <div class="placeholder-inner">
+                                <i class="fas fa-bolt"></i>
+                                <span>Panel IA Pollería</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://poller-ia.vercel.app" target="_blank" class="project-link"
+                                        aria-label="Ver sitio en vivo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/NikyMen/Poller-ia" target="_blank" class="project-link"
+                                        aria-label="Ver código en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Panel IA Pollería</h3>
+                            <p>Panel de control en Vercel para gestionar líneas de WhatsApp y pausar o reactivar el bot de IA en tiempo real. Integrado con flujos de automatización en n8n y autenticación por sesión.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>n8n</span>
+                                <span>IA</span>
+                                <span>Vercel</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image placeholder">
+                            <div class="placeholder-inner">
+                                <i class="fas fa-calendar-check"></i>
+                                <span>turnerIA</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://turneria.vercel.app" target="_blank" class="project-link"
+                                        aria-label="Ver sitio en vivo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/NikyMen/turneria" target="_blank" class="project-link"
+                                        aria-label="Ver código en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>turnerIA</h3>
+                            <p>Software de gestión para consultorios construido con Next.js 15 y React 19. Incluye login con JWT, dashboard operativo, agenda integrada con Google Calendar, gestión de pacientes y disparadores de automatización hacia n8n.</p>
+                            <div class="project-tech">
+                                <span>Next.js</span>
+                                <span>React 19</span>
+                                <span>Firebase</span>
+                                <span>n8n</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image placeholder">
+                            <div class="placeholder-inner">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>botniko</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://botniko.vercel.app" target="_blank" class="project-link"
+                                        aria-label="Ver sitio en vivo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/NikyMen/botniko" target="_blank" class="project-link"
+                                        aria-label="Ver código en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>botniko</h3>
+                            <p>Bot de WhatsApp desarrollado con Node.js y Express sobre la API de WhatsApp Business Cloud, listo para desplegar en Vercel. Base para automatizar la atención y las respuestas por mensajería.</p>
+                            <div class="project-tech">
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>WhatsApp API</span>
+                                <span>Vercel</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image placeholder">
+                            <div class="placeholder-inner">
+                                <i class="fas fa-comments"></i>
+                                <span>Chatbot Web</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://chatbot-seven-neon-85.vercel.app" target="_blank" class="project-link"
+                                        aria-label="Ver sitio en vivo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/NikyMen/chatbot" target="_blank" class="project-link"
+                                        aria-label="Ver código en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Chatbot Web</h3>
+                            <p>Chatbot web interactivo con interfaz conversacional, desplegado en Vercel. Pensado como base para integrar respuestas automáticas e inteligencia artificial.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>JavaScript</span>
+                                <span>IA</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image placeholder">
+                            <div class="placeholder-inner">
+                                <i class="fas fa-address-book"></i>
+                                <span>CRM</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://github.com/NikyMen/CRM" target="_blank" class="project-link"
+                                        aria-label="Ver código en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>CRM</h3>
+                            <p>Sistema CRM desarrollado con TypeScript para la gestión de clientes y el seguimiento comercial, con foco en organizar leads y automatizar el flujo de ventas.</p>
+                            <div class="project-tech">
+                                <span>TypeScript</span>
+                                <span>React</span>
+                                <span>Node.js</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image placeholder">
+                            <div class="placeholder-inner">
+                                <i class="fas fa-futbol"></i>
+                                <span>Pasión Mundialista</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://pasion-mundialista.vercel.app" target="_blank" class="project-link"
+                                        aria-label="Ver sitio en vivo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/NikyMen/PasionMundialista" target="_blank" class="project-link"
+                                        aria-label="Ver código en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Pasión Mundialista</h3>
+                            <p>Tienda online construida con Astro y React para la venta de álbumes, figuritas y productos del Mundial. Carrito con Zustand, formularios validados con Zod y diseño responsive con Tailwind CSS.</p>
+                            <div class="project-tech">
+                                <span>Astro</span>
+                                <span>React</span>
+                                <span>TailwindCSS</span>
+                                <span>Zustand</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image placeholder">
+                            <div class="placeholder-inner">
+                                <i class="fas fa-globe"></i>
+                                <span>Refugio Camba</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://refugio-camba.vercel.app" target="_blank" class="project-link"
+                                        aria-label="Ver sitio en vivo">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/NikyMen/Refugio-Camba" target="_blank" class="project-link"
+                                        aria-label="Ver código en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Refugio Camba</h3>
+                            <p>Sitio web responsive desarrollado con JavaScript y desplegado en Vercel, con una interfaz moderna y orientada a presentar el proyecto de forma clara.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>Vercel</span>
                             </div>
                         </div>
                     </article>
