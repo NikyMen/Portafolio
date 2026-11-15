@@ -1702,3 +1702,663 @@ footer .logo-text {
         margin: 12px 0;
     }
 }
+
+/* =========================================================
+   Proyectos 2025-2026 (work-*)
+   ========================================================= */
+.projects-intro {
+    max-width: 640px;
+    margin: 0 auto;
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+}
+
+/* Números del año */
+.pulse-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.pulse-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: var(--color-tono);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.pulse-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.pulse-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+/* Hackatón destacada */
+.award-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+    background: var(--color-tono);
+    border: 2px solid #d4af37;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px -8px rgba(212, 175, 55, 0.35);
+}
+
+.award-media {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.award-media > img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.award-thumbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+}
+
+.award-thumbs img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.award-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.award-badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+    color: #4a3a00;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    border-radius: var(--radius-full);
+}
+
+.award-body h3 {
+    font-size: var(--font-size-3xl);
+    color: var(--color-text);
+}
+
+.award-body p {
+    color: var(--color-text-light);
+}
+
+/* Filtros */
+.work-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.work-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-family: inherit;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text);
+    background: var(--color-tono);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.work-filter:hover {
+    border-color: var(--color-primary);
+}
+
+.work-filter.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+/* Grilla de proyectos */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.work-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-tono);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.work-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.work-card.is-hidden {
+    display: none;
+}
+
+.work-cover {
+    position: relative;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--c1, var(--color-primary)) 0%, var(--c2, var(--color-accent)) 100%);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.work-cover > i {
+    font-size: 3.5rem;
+    opacity: 0.95;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+}
+
+.work-monogram {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+}
+
+.work-cover-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.work-cover-light {
+    background: #ffffff;
+}
+
+.work-cover-light img {
+    object-fit: contain;
+    object-position: center;
+    padding: var(--spacing-lg);
+}
+
+.work-kind,
+.work-metric {
+    position: absolute;
+    z-index: 1;
+    padding: 2px 10px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radius-full);
+}
+
+.work-kind {
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.work-metric {
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+}
+
+.work-metric strong {
+    font-size: var(--font-size-sm);
+}
+
+.work-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    flex: 1;
+}
+
+.work-body h3 {
+    color: var(--color-text);
+    font-size: var(--font-size-xl);
+}
+
+.work-pitch {
+    color: var(--color-text-light);
+}
+
+.work-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: 0;
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+}
+
+.work-highlights li {
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.work-highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-primary);
+}
+
+.work-family {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.work-family-title {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-light);
+}
+
+.work-family-item {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-surface);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.work-family-item strong {
+    color: var(--color-text);
+}
+
+.work-family-item span {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+.work-body .project-tech {
+    gap: var(--spacing-sm);
+    margin-top: auto;
+}
+
+.work-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.work-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    transition: var(--transition-fast);
+}
+
+.work-links a:hover {
+    border-color: var(--color-primary);
+}
+
+.work-more {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+.work-more[hidden] {
+    display: none;
+}
+
+/* Primeros pasos */
+.early-steps {
+    margin-top: var(--spacing-2xl);
+    background: var(--color-tono);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.early-steps summary {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-lg) 3.5rem var(--spacing-lg) var(--spacing-lg);
+    cursor: pointer;
+    list-style: none;
+}
+
+.early-steps summary::-webkit-details-marker {
+    display: none;
+}
+
+.early-steps-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.early-steps-title i {
+    color: var(--color-primary);
+}
+
+.early-steps-sub {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+.early-steps-chevron {
+    position: absolute;
+    right: var(--spacing-lg);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-primary);
+    transition: transform var(--transition-normal);
+}
+
+.early-steps[open] .early-steps-chevron {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.early-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-lg) var(--spacing-lg);
+}
+
+.early-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.early-item h4 {
+    color: var(--color-text);
+}
+
+.early-item p {
+    flex: 1;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+.early-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-primary);
+}
+
+.early-meta span {
+    margin-right: auto;
+}
+
+.early-meta a {
+    color: var(--color-text-light);
+    font-size: var(--font-size-base);
+    transition: var(--transition-fast);
+}
+
+.early-meta a:hover {
+    color: var(--color-primary);
+}
+
+@media (min-width: 1100px) {
+    .work-card-wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 900px) {
+    .award-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .pulse-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pulse-number {
+        font-size: 2rem;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .award-card {
+        padding: var(--spacing-md);
+    }
+
+    .award-body h3 {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* Logos de clientes en las portadas */
+.work-logo {
+    position: relative;
+    z-index: 0;
+    max-height: 112px;
+    max-width: 72%;
+    object-fit: contain;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.45);
+    transition: transform var(--transition-normal);
+}
+
+.work-card:hover .work-logo {
+    transform: scale(1.06);
+}
+
+.work-logo-plate {
+    padding: 14px 18px;
+    background: #ffffff;
+}
+
+.work-logo-plate-dark {
+    background: #0b0b0b;
+}
+
+.work-family-item.has-logo {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: var(--spacing-md);
+    align-items: center;
+}
+
+.work-family-logo {
+    grid-row: span 2;
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    background: #ffffff;
+}
+
+/* Fondos de portada por proyecto (el logo se ve sobre el color de su marca) */
+.work-cover.cover-white { background: #ffffff; }
+.work-cover.cover-black { background: #000000; }
+.work-cover.cover-romez { background: #002661; }
+
+.work-cover.cover-white .work-logo,
+.work-cover.cover-black .work-logo,
+.work-cover.cover-romez .work-logo {
+    border-radius: 0;
+    box-shadow: none;
+    max-height: 128px;
+    max-width: 78%;
+}
+
+/* Logos circulares (Pino): se recorta redondo, sin el cuadrado alrededor */
+.work-cover.cover-round .work-logo {
+    border-radius: 50%;
+    height: 136px;
+    width: 136px;
+    max-height: none;
+    max-width: none;
+}
+
+.work-cover.cover-black .work-logo[src*="consultoria-digital"] {
+    max-width: 86%;
+}
+
+/* Logo de wppia dentro de la portada */
+.work-cover > svg.work-wppia {
+    width: 104px;
+    height: 104px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+    transition: transform var(--transition-normal);
+}
+
+.work-card:hover .work-wppia {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+/* Tarjetas clickeables (enlace estirado sobre toda la tarjeta) */
+.work-card-linked,
+.work-card-demo {
+    position: relative;
+    cursor: pointer;
+}
+
+.work-card-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.work-card-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.work-card-linked .work-links a,
+.work-card-demo .work-links a {
+    position: relative;
+    z-index: 3;
+}
+
+.work-card-link:focus-visible::after {
+    outline: 3px solid var(--color-primary);
+    outline-offset: -3px;
+    border-radius: var(--radius-lg);
+}
+
+/* Portada con captura del panel (Comercio Web IA) */
+.work-cover.cover-shot {
+    height: 260px;
+    background: #f8f7ff;
+}
+
+.work-cover.cover-shot .work-shot {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+    transition: transform var(--transition-normal);
+}
+
+.work-card:hover .work-cover.cover-shot .work-shot {
+    transform: scale(1.04);
+}
+
+.work-demo-badge {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: var(--spacing-md);
+    transform: translateX(-50%);
+    padding: 8px 18px;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    border-radius: var(--radius-full);
+    box-shadow: 0 10px 24px -6px rgba(37, 99, 235, 0.6);
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .work-cover.cover-shot {
+        height: 200px;
+    }
+}
+
+/* Ajuste fino: que las etiquetas de la esquina no tapen logos altos */
+.work-cover.cover-white .work-logo,
+.work-cover.cover-black .work-logo,
+.work-cover.cover-romez .work-logo {
+    max-height: 104px;
+}
+
+.work-cover.cover-round .work-logo {
+    height: 120px;
+    width: 120px;
+}

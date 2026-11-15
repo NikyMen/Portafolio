@@ -149,7 +149,7 @@ function animateTechItems() {
 animateTechItems();
 
 // Contador para las estadísticas
-function animateCounter(element, target, duration = 2000) {
+function animateCounter(element, target, duration = 2000, suffix = '') {
     let start = 0;
     const increment = target / (duration / 16);
     
@@ -159,7 +159,7 @@ function animateCounter(element, target, duration = 2000) {
             element.textContent = Math.floor(start);
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target;
+            element.textContent = target + suffix;
         }
     }
     
@@ -175,7 +175,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const target = parseInt(entry.target.dataset.value);
-            animateCounter(entry.target.querySelector('.stat-number'), target);
+            animateCounter(entry.target.querySelector('.stat-number'), target, 2000, entry.target.dataset.suffix || '');
             observer.unobserve(entry.target);
         }
     });
@@ -328,3 +328,79 @@ document.addEventListener('DOMContentLoaded', initParallax);
 
 
 
+
+
+// ===== Proyectos: filtros, "ver todos" y contadores =====
+const initWork = () => {
+    const grid = document.getElementById('workGrid');
+    if (!grid) return;
+
+    const cards = Array.from(grid.querySelectorAll('.work-card'));
+    const filters = document.querySelectorAll('.work-filter');
+    const moreWrap = document.querySelector('.work-more');
+    const moreBtn = document.getElementById('workMoreBtn');
+    const INITIAL_VISIBLE = window.matchMedia('(max-width: 768px)').matches ? 4 : 8;
+    let expanded = false;
+    let current = 'all';
+
+    const render = () => {
+        const matching = cards.filter(card =>
+            current === 'all' || card.dataset.cat.split(' ').includes(current));
+        const limit = current === 'all' && !expanded ? INITIAL_VISIBLE : Infinity;
+
+        cards.forEach(card => card.classList.add('is-hidden'));
+        matching.forEach((card, i) => card.classList.toggle('is-hidden', i >= limit));
+
+        if (moreWrap) {
+            const hiddenCount = matching.length - Math.min(matching.length, limit);
+            moreWrap.hidden = hiddenCount <= 0;
+            if (moreBtn) moreBtn.textContent = `Ver ${hiddenCount} proyectos más`;
+        }
+    };
+
+    filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+            current = btn.dataset.filter;
+            filters.forEach(b => {
+                const isActive = b === btn;
+                b.classList.toggle('active', isActive);
+                b.setAttribute('aria-selected', String(isActive));
+            });
+            render();
+        });
+    });
+
+    if (moreBtn) {
+        moreBtn.addEventListener('click', () => {
+            expanded = true;
+            render();
+        });
+    }
+
+    render();
+
+    // Contadores de "números del año"
+    const counters = document.querySelectorAll('[data-count]');
+    const formatter = new Intl.NumberFormat('es-AR');
+    const counterObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseInt(el.dataset.count, 10);
+            const duration = 1500;
+            const start = performance.now();
+            const step = now => {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = formatter.format(Math.round(target * eased));
+                if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+            obs.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => counterObserver.observe(el));
+};
+
+document.addEventListener('DOMContentLoaded', initWork);
